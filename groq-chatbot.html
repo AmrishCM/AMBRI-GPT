@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>AMBRI-GPT</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMBRI-GPT - Groq Chatbot</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #e9eff5;
@@ -11,6 +16,7 @@
       display: flex;
       justify-content: center;
       height: 100vh;
+      padding: 0;
     }
 
     #chatbox {
@@ -19,11 +25,10 @@
       background: #ffffff;
       width: 100%;
       max-width: 720px;
-      margin: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      overflow: hidden;
-      height: 90vh;
+      height: 100vh;
+      margin: 0 auto;
+      border-radius: 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
     #header {
@@ -40,7 +45,7 @@
     }
 
     #header h1 {
-      font-size: 20px;
+      font-size: 1.4rem;
       margin: 0;
     }
 
@@ -105,7 +110,7 @@
     #userInput {
       flex: 1;
       padding: 10px;
-      font-size: 1em;
+      font-size: 1rem;
       border-radius: 8px;
       border: 1px solid #ccc;
     }
@@ -113,7 +118,7 @@
     button {
       margin-left: 10px;
       padding: 10px 16px;
-      font-size: 1em;
+      font-size: 1rem;
       border: none;
       background-color: #0e76a8;
       color: white;
@@ -123,6 +128,32 @@
 
     button:hover {
       background-color: #0b5f8a;
+    }
+
+    @media (max-width: 600px) {
+      #chatbox {
+        height: 100vh;
+        border-radius: 0;
+      }
+
+      #header h1 {
+        font-size: 1.2rem;
+      }
+
+      .avatar {
+        width: 32px;
+        height: 32px;
+      }
+
+      .bubble {
+        font-size: 0.95rem;
+        max-width: 85%;
+      }
+
+      button {
+        padding: 10px;
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
